@@ -35,11 +35,11 @@ const ResetPasswordPage = ({ resetToken }) => {
       }
     }
     validateToken()
-  }, [resetToken, validateResetToken])
+  }, [])
 
-  const passwordRef = useRef(null)
+  const passwordRef = useRef()
   useEffect(() => {
-    passwordRef.current?.focus()
+    passwordRef.current.focus()
   }, [])
 
   const onSubmit = async (data) => {
@@ -92,7 +92,7 @@ const ResetPasswordPage = ({ resetToken }) => {
                       validation={{
                         required: {
                           value: true,
-                          message: 'New Password is required',
+                          message: 'Password is required',
                         },
                       }}
                     />

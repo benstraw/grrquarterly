@@ -16,9 +16,9 @@ const ForgotPasswordPage = () => {
     }
   }, [isAuthenticated])
 
-  const usernameRef = useRef(null)
+  const usernameRef = useRef()
   useEffect(() => {
-    usernameRef?.current?.focus()
+    usernameRef.current.focus()
   }, [])
 
   const onSubmit = async (data) => {
@@ -68,10 +68,7 @@ const ForgotPasswordPage = () => {
                       errorClassName="rw-input rw-input-error"
                       ref={usernameRef}
                       validation={{
-                        required: {
-                          value: true,
-                          message: 'Username is required',
-                        },
+                        required: true,
                       }}
                     />
 
