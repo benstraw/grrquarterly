@@ -31,3 +31,22 @@ yarn rw test
 # start prisma studio and launch in browser
 yarn rw prisma studio
 ```
+## Reinstall redwoodjs and start over with your project in tact
+(https://rw-community.org/how%20to/reinstall%20rw/)[thanks]
+```bash
+# Delete the following set of files/directories:
+
+rm -rf ./.redwood
+rm -rf ./.yarn/install-state.gz (RFC - I'm not 100% sure this file is required, it's only applicable to Yarn v3 regardless)
+rm -rf ./api/node_modules
+rm -rf ./web/node_modules
+rm -rf ./node_modules
+rm -rf ./yarn.lock
+
+# Re-install dependencies
+yarn install
+# Re-generate Redwood types
+yarn rw g types
+# Re-generate the Prisma client
+yarn rw prisma generate
+```
