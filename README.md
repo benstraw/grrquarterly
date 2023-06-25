@@ -32,7 +32,9 @@ yarn rw test
 yarn rw prisma studio
 ```
 ## Reinstall redwoodjs and start over with your project in tact
-(https://rw-community.org/how%20to/reinstall%20rw/)[thanks]
+
+[thanks](https://rw-community.org/how%20to/reinstall%20rw/)
+
 ```bash
 # Delete the following set of files/directories:
 
