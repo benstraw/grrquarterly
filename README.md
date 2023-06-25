@@ -1,9 +1,11 @@
-# Redwood Tutorial App
+# Grrquarterly app
 
-This repo represents the final state of the app created during the [Redwood Tutorial](https://redwoodjs.com/tutorial).
-It is meant to be a starting point for those working on the second half of the Tutorial, starting at the [Intermission](https://redwoodjs.com/docs/tutorial/intermission).
+This repo was created with the final state of the app I created during the [Redwood Tutorial](https://redwoodjs.com/tutorial).
 
-This repo contains much more styling than the one we built together in the tutorial, but is functionally identical.
+## About
+grrquarterly.com is an app where users can upload a photo of their dog and share a story about them. The app is built with [RedwoodJS](https://redwoodjs.com/), a full-stack framework for JAMstack applications.
+
+The story will be generated using [GPT-3](https://openai.com/blog/openai-api/), a language model that can generate human-like text. The app will use the [OpenAI API](https://beta.openai.com/) to generate the story. (just like it did for this README!)
 
 ## Setup
 
