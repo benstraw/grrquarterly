@@ -12,7 +12,7 @@ The story will be generated using [GPT-3](https://openai.com/blog/openai-api/), 
 The [tutorial itself](https://redwoodjs.com/docs/tutorial/chapter1/prerequisites) contains instructions for getting this repo up and running, but here is a summary of the commands:
 
 ```bash
-git clone https://github.com/redwoodjs/redwood-tutorial
+git clone https://github.com/benstraw/grrquartly
 cd redwood-tutorial
 yarn install
 yarn rw prisma migrate dev
