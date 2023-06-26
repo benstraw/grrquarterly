@@ -41,7 +41,7 @@ yarn rw prisma studio
 # Delete the following set of files/directories:
 
 rm -rf ./.redwood
-rm -rf ./.yarn/install-state.gz (RFC - I'm not 100% sure this file is required, it's only applicable to Yarn v3 regardless)
+rm -rf ./.yarn/install-state.gz # (RFC - I'm not 100% sure this file is required, it's only applicable to Yarn v3 regardless)
 rm -rf ./api/node_modules
 rm -rf ./web/node_modules
 rm -rf ./node_modules
