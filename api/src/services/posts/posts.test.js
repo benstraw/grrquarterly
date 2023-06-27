@@ -14,17 +14,14 @@ describe('posts', () => {
   })
 
   scenario('creates a post', async () => {
-    mockCurrentUser({ id: 1, roles: ['admin'] })
+    mockCurrentUser({ id: 1, roles: 'admin' })
 
     const result = await createPost({
-      input: {
-        title: 'String',
-        body: 'String',
-      },
+      input: { title: 'String', body: 'String' },
     })
 
-    //expect(result.title).toEqual('String')
-    //expect(result.body).toEqual('String')
+    expect(result.title).toEqual('String')
+    expect(result.body).toEqual('String')
   })
 
   scenario('updates a post', async (scenario) => {

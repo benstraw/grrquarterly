@@ -11,16 +11,9 @@ export const post = ({ id }) => {
 }
 
 export const createPost = ({ input }) => {
-  if (!context.currentUser) {
-    throw new Error('You must be logged in to do this')
-  }
-  console.log('input: ' + JSON.stringify(input))
-  console.log('user id ' + context.currentUser.id)
-  /*
   return db.post.create({
     data: { ...input, userId: context.currentUser.id },
   })
-  */
 }
 
 export const updatePost = ({ id, input }) => {
