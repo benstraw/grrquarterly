@@ -8,6 +8,13 @@ export const standard = defineScenario({
           create: {
             title: 'Redwood Leaves',
             body: 'The quick brown fox jumped over the lazy dog.',
+            user: {
+              create: {
+                email: 'String2@foo.zoo',
+                hashedPassword: 'String',
+                salt: 'String',
+              },
+            },
           },
         },
       },
@@ -20,6 +27,13 @@ export const standard = defineScenario({
           create: {
             title: 'Root Systems',
             body: 'The five boxing wizards jump quickly.',
+            user: {
+              create: {
+                email: 'ring2@foo.zoo',
+                hashedPassword: 'String',
+                salt: 'String',
+              },
+            },
           },
         },
       },
@@ -32,7 +46,14 @@ export const postOnly = defineScenario({
     bark: {
       data: {
         title: 'Bark',
-        body: "A tree's bark is worse than its bite",
+        body: "A tree's bark is way worse than its bite",
+        user: {
+          create: {
+            email: 'cgitrieng2@foo.zoo',
+            hashedPassword: 'String',
+            salt: 'String',
+          },
+        },
       },
     },
   },
