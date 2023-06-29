@@ -2,7 +2,7 @@ import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
 
 import { db } from 'src/lib/db'
 
-import { comments, createComment, deleteComment } from './comments'
+import { comments, comment, createComment, deleteComment } from './comments'
 
 describe('comments', () => {
   scenario(
@@ -16,6 +16,11 @@ describe('comments', () => {
       expect(result.length).toEqual(post.comments.length)
     }
   )
+
+  scenario('returns a single comment from the database', async (scenario) => {
+    const result = await comment({ id: scenario.comment.jane.id })
+    expect(result).toEqual(scenario.comment.jane)
+  })
 
   scenario('postOnly', 'creates a new comment', async (scenario) => {
     const comment = await createComment({

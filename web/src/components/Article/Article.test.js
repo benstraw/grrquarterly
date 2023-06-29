@@ -9,6 +9,9 @@ const ARTICLE = {
   title: 'First post',
   body: `Neutra tacos hot chicken prism raw denim, put a bird on it enamel pin post-ironic vape cred DIY. Street art next level umami squid. Hammock hexagon glossier 8-bit banjo. Neutra la croix mixtape echo park four loko semiotics kitsch forage chambray. Semiotics salvia selfies jianbing hella shaman. Letterpress helvetica vaporware cronut, shaman butcher YOLO poke fixie hoodie gentrify woke heirloom.`,
   createdAt: new Date().toISOString(),
+  user: {
+    name: 'jon doe',
+  },
 }
 
 describe('Article', () => {
@@ -17,6 +20,12 @@ describe('Article', () => {
 
     expect(screen.getByText(ARTICLE.title)).toBeInTheDocument()
     expect(screen.getByText(ARTICLE.body)).toBeInTheDocument()
+  })
+
+  it('shows the author of the blog post', () => {
+    render(<Article article={ARTICLE} />)
+
+    expect(screen.getByText(`by ${ARTICLE.user.name}`)).toBeInTheDocument()
   })
 
   it('renders comments when displaying a full blog post', async () => {
