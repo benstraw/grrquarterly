@@ -22,6 +22,12 @@ describe('Article', () => {
     expect(screen.getByText(ARTICLE.body)).toBeInTheDocument()
   })
 
+  it('shows the author of the blog post', () => {
+    render(<Article article={ARTICLE} />)
+
+    expect(screen.getByText(`by ${ARTICLE.user.name}`)).toBeInTheDocument()
+  })
+
   it('renders comments when displaying a full blog post', async () => {
     const comment = standard().comments[0]
     render(<Article article={ARTICLE} />)
