@@ -11,6 +11,7 @@ import { Router, Route, Private, Set } from '@redwoodjs/router'
 
 import BlogLayout from 'src/layouts/BlogLayout'
 import PostsLayout from 'src/layouts/PostsLayout'
+import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 
 import { useAuth } from './auth'
 
@@ -24,12 +25,18 @@ const Routes = () => {
       <Private unauthenticated="home">
         <Set wrap={BlogLayout}>
           <Route path="/admin" page={AdminHomePage} name="adminHome" />
-        </Set>
-        <Set wrap={PostsLayout}>
-          <Route path="/admin/posts/new" page={PostNewPostPage} name="newPost" />
-          <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
-          <Route path="/admin/posts/{id:Int}" page={PostPostPage} name="post" />
-          <Route path="/admin/posts" page={PostPostsPage} name="posts" />
+          <Set wrap={ScaffoldLayout} title="Users" titleTo="users" buttonLabel="New User" buttonTo="newUser">
+            <Route path="/admin/users/new" page={UserNewUserPage} name="newUser" />
+            <Route path="/admin/users/{id:Int}/edit" page={UserEditUserPage} name="editUser" />
+            <Route path="/admin/users/{id:Int}" page={UserUserPage} name="user" />
+            <Route path="/admin/users" page={UserUsersPage} name="users" />
+          </Set>
+          <Set wrap={PostsLayout}>
+            <Route path="/admin/posts/new" page={PostNewPostPage} name="newPost" />
+            <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
+            <Route path="/admin/posts/{id:Int}" page={PostPostPage} name="post" />
+            <Route path="/admin/posts" page={PostPostsPage} name="posts" />
+          </Set>
         </Set>
       </Private>
       <Set wrap={BlogLayout}>

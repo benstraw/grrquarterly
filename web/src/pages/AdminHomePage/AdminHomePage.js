@@ -6,9 +6,14 @@ const AdminHomePage = () => {
     <>
       <MetaTags title="AdminHome" description="AdminHome page" />
 
-      <h1>Admin</h1>
+      <h1>Admin Home</h1>
       <p>
-        <Link to={routes.posts()}>Posts</Link>
+        <li>
+          <Link to={routes.posts()}>Posts</Link>
+        </li>
+        <li>
+          <Link to={routes.users()}>Users</Link>
+        </li>
       </p>
     </>
   )
