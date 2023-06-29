@@ -46,7 +46,7 @@ const BlogLayout = ({ children }) => {
                   >
                     Logout
                   </button>
-                  {currentUser.roles.includes('admin') && (
+                  {currentUser.roles == 'admin' && (
                     <Link
                       className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
                       to={routes.adminHome()}
