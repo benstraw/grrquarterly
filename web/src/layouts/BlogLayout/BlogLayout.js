@@ -15,7 +15,7 @@ const BlogLayout = ({ children }) => {
             className="text-blue-400 hover:text-blue-100 transition duration-100"
             to={routes.home()}
           >
-            Redwood Blog
+            GrrQ
           </Link>
         </h1>
         <nav>
@@ -39,12 +39,27 @@ const BlogLayout = ({ children }) => {
             <li>
               {isAuthenticated ? (
                 <div>
-                  <button type="button" onClick={logOut} className="py-2 px-4">
+                  <button
+                    type="button"
+                    onClick={logOut}
+                    className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
+                  >
                     Logout
                   </button>
+                  {currentUser.roles.includes('admin') && (
+                    <Link
+                      className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
+                      to={routes.adminHome()}
+                    >
+                      Admin
+                    </Link>
+                  )}
                 </div>
               ) : (
-                <Link to={routes.login()} className="py-2 px-4">
+                <Link
+                  to={routes.login()}
+                  className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
+                >
                   Login
                 </Link>
               )}

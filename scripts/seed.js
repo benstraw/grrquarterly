@@ -1,5 +1,26 @@
 import { db } from 'api/src/lib/db'
 
+const USERS = [
+  {
+    id: 1,
+    email: 'ben+rwadmin@benstrawbridge.com',
+    name: 'John Doe',
+    hashedPassword:
+      'ad9563042fe9f154419361eeeb775d8a12f3975a3722953fd8e326dd108d5645',
+    salt: '1c99de412b219e9abf4665293211adce',
+    roles: 'admin',
+  },
+  {
+    id: 2,
+    email: 'ben+rwmod@benstrawbridge.com',
+    name: 'Jane Doe',
+    hashedPassword:
+      '9d597752672c7c7046201988a485e965114165524749a61cb81bcbe473f7a803',
+    salt: 'c565672ee32939ec25a95116d933fffb',
+    roles: 'moderator',
+  },
+]
+
 const POSTS = [
   {
     id: 1,
@@ -17,25 +38,28 @@ const POSTS = [
     id: 3,
     title: 'What is the meaning of life?',
     body: 'Meh waistcoat succulents umami asymmetrical, hoodie post-ironic paleo chillwave tote bag. Trust fund kitsch waistcoat vape, cray offal gochujang food truck cloud bread enamel pin forage. Roof party chambray ugh occupy fam stumptown. Dreamcatcher tousled snackwave, typewriter lyft unicorn pabst portland blue bottle locavore squid PBR&B tattooed.',
-    userId: 1,
+    userId: 2,
   },
 ]
 
 export default async () => {
-  // create an admin user
-  await db.user.upsert({
-    where: { id: 1 },
-    create: {
-      id: 1,
-      name: 'John Doe',
-      email: 'admin@admin.com',
-      hashedPassword:
-        'ad9563042fe9f154419361eeeb775d8a12f3975a3722953fd8e326dd108d5645',
-      salt: '1c99de412b219e9abf4665293211adce',
-    },
-    update: {},
-  })
+  // create users
+  console.log('Seeding users and posts...')
+  console.log('')
+  for (const user of USERS) {
+    await db.user.upsert({
+      where: { id: user.id },
+      create: { ...user },
+      update: {},
+    })
 
+    console.log(`  ${user.roles} USER ${user.name} with email ${user.email}`)
+  }
+
+  // create posts
+  console.log('')
+  console.log('seeding posts...')
+  console.log('')
   for (const post of POSTS) {
     await db.post.upsert({
       where: { id: post.id },
@@ -43,15 +67,6 @@ export default async () => {
       update: {},
     })
 
-    console.log(`  Seeded "${post.title}"`)
+    console.log(`  ${post.title}`)
   }
-
-  console.info('')
-  console.info('  Seeded admin user:')
-  console.info('')
-  console.info('    Email: admin@admin.com')
-  console.info('    Password: admin')
-  console.info('')
-  console.info(`  (Please don't use this login in a production environment)`)
-  console.info('')
 }
