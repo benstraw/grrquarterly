@@ -54,3 +54,11 @@ yarn rw g types
 # Re-generate the Prisma client
 yarn rw prisma generate
 ```
+## What's been added?
+- much more testing
+  - api side
+    - posts
+    - users
+- scaffolding for user management
+- scaffolding for posts management
+- super basic email functionality using brevo (send in blue api)

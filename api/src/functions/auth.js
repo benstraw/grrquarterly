@@ -1,6 +1,8 @@
 import { DbAuthHandler } from '@redwoodjs/auth-dbauth-api'
 
 import { db } from 'src/lib/db'
+import { sendEmail } from 'src/lib/email'
+import { logger } from 'src/lib/logger'
 
 export const handler = async (event, context) => {
   const forgotPasswordOptions = {
@@ -46,7 +48,16 @@ export const handler = async (event, context) => {
     // by the `logIn()` function from `useAuth()` in the form of:
     // `{ message: 'Error message' }`
     handler: (user) => {
-      return user
+      // TODO:: user verification
+      if (!user.verified) {
+        logger.info(`User ${user.email} tried to log in but is not verified`)
+
+        // throw new Error('Please validate your email first!')
+        // this is in development mode, so we'll just return the user
+        return user
+      } else {
+        return user
+      }
     },
 
     errors: {
@@ -102,9 +113,23 @@ export const handler = async (event, context) => {
     //
     // If this returns anything else, it will be returned by the
     // `signUp()` function in the form of: `{ message: 'String here' }`.
-    handler: ({ username, hashedPassword, salt, userAttributes }) => {
+    handler: async ({ username, hashedPassword, salt, userAttributes }) => {
+      const welcomeMessage =
+        'Welcome to the website, please verify your email address.'
+      const name = userAttributes.name
+
+      function sendWelcomeEmail(emailAddress) {
+        const subject = 'Welcome'
+        const text = welcomeMessage
+        const html = welcomeMessage
+        return sendEmail({ to: emailAddress, subject, text, html })
+      }
+
+      await sendWelcomeEmail(username)
+
       return db.user.create({
         data: {
+          name: name,
           email: username,
           hashedPassword: hashedPassword,
           salt: salt,
