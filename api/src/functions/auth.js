@@ -97,42 +97,6 @@ export const handler = async (event, context) => {
     // If `false` then the new password MUST be different from the current one
     allowReusedPassword: true,
 
-    // Include any format checks for password here. Return `true` if the
-    // password is valid, otherwise throw a `PasswordValidationError`.
-    // Import the error along with `DbAuthHandler` from `@redwoodjs/api` above.
-    passwordValidation: (_password) => {
-      // Minimum length of the password
-      const MIN_LENGTH = 8
-
-      // Regular expressions for letters, numbers, and special characters
-      const hasLetters = /[a-zA-Z]/.test(_password)
-      const hasNumbers = /\d/.test(_password)
-      const hasSpecialChars = /[!@#$%^&*(),.?":{}|<>]/.test(_password)
-
-      if (_password.length < MIN_LENGTH) {
-        throw new PasswordValidationError(
-          'Password must be at least ' + MIN_LENGTH + ' characters long.'
-        )
-      }
-      if (!hasLetters) {
-        throw new PasswordValidationError(
-          'Password must contain at least one letter.'
-        )
-      }
-      if (!hasNumbers) {
-        throw new PasswordValidationError(
-          'Password must contain at least one number.'
-        )
-      }
-      if (!hasSpecialChars) {
-        throw new PasswordValidationError(
-          'Password must contain at least one special character.'
-        )
-      }
-
-      return true
-    },
-
     errors: {
       // the resetToken is valid, but expired
       resetTokenExpired: 'resetToken is expired',
