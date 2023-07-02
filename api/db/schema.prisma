@@ -1,5 +1,4 @@
-datasource sqlite {
-  // provider = "sqlite"
+datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
@@ -35,7 +34,7 @@ model User {
   salt                String
   resetToken          String?
   resetTokenExpiresAt DateTime?
-  roles               String    @default("user")
+  roles               String[]  @default(["user"])
   Posts               Post[]
 }
 

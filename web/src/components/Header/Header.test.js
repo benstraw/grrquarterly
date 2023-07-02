@@ -4,7 +4,7 @@ import Header from './Header'
 
 const EMAIL = 'admin@admin.com'
 const loggedIn = () => {
-  mockCurrentUser({ email: EMAIL })
+  mockCurrentUser({ email: EMAIL, roles: ['admin'] })
 }
 const loggedOut = () => {
   mockCurrentUser(null)

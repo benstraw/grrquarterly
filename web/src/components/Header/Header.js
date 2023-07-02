@@ -43,7 +43,7 @@ const Header = () => {
                 >
                   Logout
                 </button>
-                {currentUser.roles == 'admin' && (
+                {currentUser.roles && currentUser.roles.includes('admin') && (
                   <Link
                     className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
                     to={routes.adminHome()}
