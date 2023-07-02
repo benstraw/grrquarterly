@@ -22,7 +22,7 @@ const Routes = () => {
       <Route path="/signup" page={SignupPage} name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
       <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
-      <Private unauthenticated="home">
+      <Private unauthenticated="home" roles="admin">
         <Set wrap={BlogLayout}>
           <Route path="/admin" page={AdminHomePage} name="adminHome" />
           <Set wrap={ScaffoldLayout} title="Users" titleTo="users" buttonLabel="New User" buttonTo="newUser">
