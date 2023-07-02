@@ -8,7 +8,7 @@ const USERS = [
     hashedPassword:
       'ad9563042fe9f154419361eeeb775d8a12f3975a3722953fd8e326dd108d5645',
     salt: '1c99de412b219e9abf4665293211adce',
-    roles: ['admin', 'moderator', 'user'],
+    roles: 'admin',
   },
   {
     id: 2,
@@ -53,7 +53,7 @@ export default async () => {
       update: {},
     })
 
-    console.log(`  ${user.roles} USER ${user.name} with email ${user.email}`)
+    console.log(`  ${user.roles} user ${user.name} with email ${user.email}`)
   }
 
   // create posts

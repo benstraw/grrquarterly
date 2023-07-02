@@ -1,4 +1,4 @@
-name: Redwood CI
+name: GrrQuarterly CI
 
 on:
   push:

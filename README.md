@@ -63,3 +63,5 @@ yarn rw prisma generate
 - scaffolding for posts management
 - super basic email functionality using brevo (send in blue api)
 - password reset flow with email containing a link to reset password with resetToken
+- setup github actions ci to run the full build, including setup of the db, and running the tests
+
