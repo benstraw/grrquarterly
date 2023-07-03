@@ -155,7 +155,7 @@ export const handler = async (event, context) => {
     // Import the error along with `DbAuthHandler` from `@redwoodjs/api` above.
     passwordValidation: (_password) => {
       // Minimum length of the password
-      const MIN_LENGTH = 8
+      const MIN_LENGTH = process.env.PASSWORD_VALIDATION_MIN_LENGTH
 
       // Regular expressions for letters, numbers, and special characters
       const hasLetters = /[a-zA-Z]/.test(_password)

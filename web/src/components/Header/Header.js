@@ -3,7 +3,7 @@ import { Link, routes } from '@redwoodjs/router'
 import { useAuth } from 'src/auth'
 
 const Header = () => {
-  const { logOut, isAuthenticated, currentUser } = useAuth()
+  const { logOut, isAuthenticated, currentUser, hasRole } = useAuth()
 
   return (
     <header className="relative flex justify-between items-center py-4 px-8 bg-blue-700 text-white">
@@ -36,14 +36,7 @@ const Header = () => {
           <li>
             {isAuthenticated ? (
               <div>
-                <button
-                  type="button"
-                  onClick={logOut}
-                  className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
-                >
-                  Logout
-                </button>
-                {currentUser.roles && currentUser.roles.includes('admin') && (
+                {hasRole('admin') && (
                   <Link
                     className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
                     to={routes.adminHome()}
@@ -51,6 +44,13 @@ const Header = () => {
                     Admin
                   </Link>
                 )}
+                <button
+                  type="button"
+                  onClick={logOut}
+                  className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
+                >
+                  Logout
+                </button>
               </div>
             ) : (
               <Link

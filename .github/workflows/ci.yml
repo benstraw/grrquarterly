@@ -51,3 +51,5 @@ jobs:
       - run: yarn rw test api --no-watch
       # run the web tests
       - run: yarn rw test web --no-watch
+      # generate coverage report
+      - run: yarn rw test --coverage
