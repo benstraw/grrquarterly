@@ -49,6 +49,14 @@ const Post = ({ post }) => {
               <td>{post.body}</td>
             </tr>
             <tr>
+              <th>Author</th>
+              <td>
+                <Link to={routes.editUser({ id: post.user.id })}>
+                  {post.user.name}
+                </Link>
+              </td>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(post.createdAt)}</td>
             </tr>
