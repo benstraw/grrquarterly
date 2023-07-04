@@ -5,8 +5,6 @@ import { useAuth } from 'src/auth'
 import Header from 'src/components/Header'
 
 const RyderLayout = ({ children }) => {
-  const { logOut, isAuthenticated, currentUser } = useAuth()
-
   return (
     <>
       <Toaster />
