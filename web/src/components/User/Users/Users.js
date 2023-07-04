@@ -42,8 +42,6 @@ const UsersList = ({ users }) => {
             <th>Id</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Hashed password</th>
-            <th>Salt</th>
             <th>Reset token</th>
             <th>Reset token expires at</th>
             <th>Roles</th>
@@ -56,8 +54,6 @@ const UsersList = ({ users }) => {
               <td>{truncate(user.id)}</td>
               <td>{truncate(user.name)}</td>
               <td>{truncate(user.email)}</td>
-              <td>{truncate(user.hashedPassword)}</td>
-              <td>{truncate(user.salt)}</td>
               <td>{truncate(user.resetToken)}</td>
               <td>{timeTag(user.resetTokenExpiresAt)}</td>
               <td>{truncate(user.roles)}</td>

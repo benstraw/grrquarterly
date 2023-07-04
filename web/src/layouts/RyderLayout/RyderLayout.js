@@ -4,7 +4,7 @@ import { Toaster } from '@redwoodjs/web/dist/toast'
 import { useAuth } from 'src/auth'
 import Header from 'src/components/Header'
 
-const BlogLayout = ({ children }) => {
+const RyderLayout = ({ children }) => {
   const { logOut, isAuthenticated, currentUser } = useAuth()
 
   return (
@@ -18,4 +18,4 @@ const BlogLayout = ({ children }) => {
   )
 }
 
-export default BlogLayout
+export default RyderLayout

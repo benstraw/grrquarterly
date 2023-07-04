@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@redwoodjs/testing'
 
-import BlogLayout from './BlogLayout'
+import BlogLayout from './RyderLayout'
 
 const EMAIL = 'rob@redwoodjs.com'
 const loggedIn = () => {
