@@ -13,6 +13,7 @@
     ]
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
     "@redwoodjs/auth": "5.0.0",
     "@redwoodjs/auth-dbauth-web": "5.0.0",
     "@redwoodjs/forms": "5.0.0",

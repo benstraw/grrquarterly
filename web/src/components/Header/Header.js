@@ -61,12 +61,17 @@ const Header = () => {
               </Link>
             )}
           </li>
+          {isAuthenticated && (
+            <li>
+              <Link
+                to={routes.profile()}
+                className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
+              >
+                <i className="fa fa-user"></i>
+              </Link>
+            </li>
+          )}
         </ul>
-        {isAuthenticated && (
-          <div className="absolute bottom-1 right-0 mr-12 text-xs text-blue-300">
-            {currentUser.email}
-          </div>
-        )}
       </nav>
     </header>
   )

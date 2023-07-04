@@ -29,11 +29,4 @@ describe('Header', () => {
 
     await waitFor(() => expect(screen.getByText('Logout')).toBeInTheDocument())
   })
-
-  it("displays a logged in user's email address", async () => {
-    loggedIn()
-    render(<Header />)
-
-    await waitFor(() => expect(screen.getByText(EMAIL)).toBeInTheDocument())
-  })
 })

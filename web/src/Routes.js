@@ -39,6 +39,7 @@ const Routes = () => {
         </Set>
       </Private>
       <Set wrap={RyderLayout}>
+        <Route path="/profile" page={ProfilePage} name="profile" />
         <Route path="/contact" page={ContactPage} name="contact" />
         <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
         <Route path="/about" page={AboutPage} name="about" />
