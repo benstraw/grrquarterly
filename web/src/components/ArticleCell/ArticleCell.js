@@ -1,3 +1,5 @@
+import { MetaTags } from '@redwoodjs/web'
+
 import Article from 'src/components/Article'
 
 export const QUERY = gql`
@@ -21,5 +23,10 @@ export const Empty = () => <div>Empty</div>
 export const Failure = ({ error }) => <div>Error: {error.message}</div>
 
 export const Success = ({ article }) => {
-  return <Article article={article} />
+  return (
+    <>
+      <MetaTags title={article.title} author={article.user.name} />
+      <Article article={article} />
+    </>
+  )
 }
