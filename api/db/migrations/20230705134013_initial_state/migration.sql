@@ -29,7 +29,7 @@ CREATE TABLE "User" (
     "salt" TEXT NOT NULL,
     "resetToken" TEXT,
     "resetTokenExpiresAt" TIMESTAMP(3),
-    "roles" TEXT NOT NULL DEFAULT 'user',
+    "roles" TEXT[] DEFAULT ARRAY['user']::TEXT[],
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
