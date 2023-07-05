@@ -1,6 +1,8 @@
 name: GrrQuarterly CI
 
 on:
+  push:
+    branches: ['develop', 'main']
   pull_request:
     branches: ['main']
 
@@ -51,4 +53,4 @@ jobs:
       # run the web tests
       - run: yarn rw test web --no-watch
       # generate coverage report
-      # - run: yarn rw test --coverage
+      - run: yarn rw test --coverage
