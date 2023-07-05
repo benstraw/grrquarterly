@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-name: Redwood CI
-=======
 name: GrrQuarterly CI
->>>>>>> release/netlify-deploy
 
 on:
   push:
@@ -58,8 +54,5 @@ jobs:
       - run: yarn rw test api --no-watch
       # run the web tests
       - run: yarn rw test web --no-watch
-<<<<<<< HEAD
-=======
       # generate coverage report
       # - run: yarn rw test --coverage
->>>>>>> release/netlify-deploy

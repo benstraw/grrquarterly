@@ -8,11 +8,7 @@ const USERS = [
     hashedPassword:
       'ad9563042fe9f154419361eeeb775d8a12f3975a3722953fd8e326dd108d5645',
     salt: '1c99de412b219e9abf4665293211adce',
-<<<<<<< HEAD
-    roles: ['admin', 'moderator', 'user'],
-=======
     roles: ['admin', 'moderator'],
->>>>>>> release/netlify-deploy
   },
   {
     id: 2,

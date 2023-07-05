@@ -63,8 +63,6 @@ yarn rw prisma generate
 - scaffolding for posts management
 - super basic email functionality using brevo (send in blue api)
 - password reset flow with email containing a link to reset password with resetToken
-<<<<<<< HEAD
-=======
 - setup github actions ci to run the full build, including setup of the db, and running the tests
 
 ### Addition of fontawesome icons
@@ -79,4 +77,3 @@ import '@fortawesome/fontawesome-free/js/all.js'
 // use the icons in your components
 <i className="fa fa-user"></i>
 ```
->>>>>>> release/netlify-deploy

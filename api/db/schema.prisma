@@ -1,13 +1,6 @@
 datasource db {
-<<<<<<< HEAD
-  // provider = "sqlite"
-  // url      = env("DATABASE_URL")
-  provider = "postgresql"
-  url      = "postgres://postgres:postgres@localhost:5432/postgres"
-=======
   provider = "postgresql"
   url      = env("DATABASE_URL")
->>>>>>> release/netlify-deploy
 }
 
 generator client {
