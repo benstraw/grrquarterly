@@ -1,4 +1,4 @@
-import BlogLayout from './BlogLayout'
+import BlogLayout from './RyderLayout'
 
 export const loggedIn = () => {
   mockCurrentUser({ email: 'rob@redwoodjs.com' })

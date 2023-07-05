@@ -155,7 +155,11 @@ export const handler = async (event, context) => {
     // Import the error along with `DbAuthHandler` from `@redwoodjs/api` above.
     passwordValidation: (_password) => {
       // Minimum length of the password
+<<<<<<< HEAD:api/src/functions/auth.js
       const MIN_LENGTH = 8
+=======
+      const MIN_LENGTH = process.env.PASSWORD_VALIDATION_MIN_LENGTH
+>>>>>>> release/netlify-deploy:api/src/functions/auth/auth.js
 
       // Regular expressions for letters, numbers, and special characters
       const hasLetters = /[a-zA-Z]/.test(_password)

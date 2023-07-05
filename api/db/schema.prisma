@@ -1,8 +1,13 @@
 datasource db {
+<<<<<<< HEAD
   // provider = "sqlite"
   // url      = env("DATABASE_URL")
   provider = "postgresql"
   url      = "postgres://postgres:postgres@localhost:5432/postgres"
+=======
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+>>>>>>> release/netlify-deploy
 }
 
 generator client {
@@ -36,7 +41,7 @@ model User {
   salt                String
   resetToken          String?
   resetTokenExpiresAt DateTime?
-  roles               String    @default("user")
+  roles               String[]  @default(["user"])
   Posts               Post[]
 }
 

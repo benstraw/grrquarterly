@@ -1,12 +1,11 @@
 import { Link, routes } from '@redwoodjs/router'
 import { Toaster } from '@redwoodjs/web/dist/toast'
+import '@fortawesome/fontawesome-free/js/all.js'
 
 import { useAuth } from 'src/auth'
 import Header from 'src/components/Header'
 
-const BlogLayout = ({ children }) => {
-  const { logOut, isAuthenticated, currentUser } = useAuth()
-
+const RyderLayout = ({ children }) => {
   return (
     <>
       <Toaster />
@@ -18,4 +17,4 @@ const BlogLayout = ({ children }) => {
   )
 }
 
-export default BlogLayout
+export default RyderLayout

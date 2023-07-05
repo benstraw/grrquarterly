@@ -14,6 +14,10 @@ export const adminPosts = () => {
   return db.post.findMany({ where: { userId: context.currentUser.id } })
 }
 
+export const adminUserPosts = () => {
+  return db.post.findMany({ where: { userId: context.currentUser.id } })
+}
+
 export const adminPost = ({ id }) => {
   return db.post.findFirst({
     where: { id, userId: context.currentUser.id },

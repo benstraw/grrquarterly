@@ -2,7 +2,7 @@ export const standard = defineScenario({
   user: {
     one: {
       data: {
-        id: 1,
+        id: 3,
         name: 'Admin',
         email: 'String5632270',
         hashedPassword: 'String',
@@ -18,6 +18,7 @@ export const standard = defineScenario({
         body: 'String',
         user: {
           create: {
+            id: 1,
             email: 'admin@admin.com',
             name: 'Admin',
             roles: 'admin',
@@ -32,13 +33,7 @@ export const standard = defineScenario({
         title: 'String',
         body: 'String',
         user: {
-          create: {
-            email: 'moderator@moderator.com',
-            name: 'Moderator',
-            roles: 'moderator',
-            hashedPassword: 'String',
-            salt: 'String',
-          },
+          connect: { id: 1 },
         },
       },
     },

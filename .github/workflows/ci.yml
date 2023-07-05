@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: Redwood CI
+=======
+name: GrrQuarterly CI
+>>>>>>> release/netlify-deploy
 
 on:
   push:
@@ -7,8 +11,11 @@ on:
     branches: ['main']
 
 env:
-  DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
-  TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
+  # DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
+  # TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
+  DATABASE_URL: postgresql://postgres:S7BhmK8nZDluS1xnTo3p@containers-us-west-57.railway.app:6051/railway?connection_limit=1
+  TEST_DATABASE_URL: postgresql://postgres:S7BhmK8nZDluS1xnTo3p@containers-us-west-57.railway.app:6051/railway?connection_limit=1
+  SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
 
 jobs:
   build:
@@ -51,3 +58,8 @@ jobs:
       - run: yarn rw test api --no-watch
       # run the web tests
       - run: yarn rw test web --no-watch
+<<<<<<< HEAD
+=======
+      # generate coverage report
+      # - run: yarn rw test --coverage
+>>>>>>> release/netlify-deploy

@@ -4,11 +4,15 @@ import Posts from 'src/components/Post/Posts'
 
 export const QUERY = gql`
   query POSTS {
-    posts: adminPosts {
+    posts: posts {
       id
       title
       body
       createdAt
+      user {
+        name
+        id
+      }
     }
   }
 `
