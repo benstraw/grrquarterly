@@ -2988,8 +2988,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "@fortawesome/fontawesome-free@npm:^6.4.0":
   version: 6.4.0
   resolution: "@fortawesome/fontawesome-free@npm:6.4.0"
@@ -2997,7 +2995,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> release/netlify-deploy
 "@gar/promisify@npm:^1.0.1":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -11230,19 +11227,11 @@ __metadata:
   linkType: hard
 
 "cross-fetch@npm:^3.1.5":
-<<<<<<< HEAD
-  version: 3.1.6
-  resolution: "cross-fetch@npm:3.1.6"
-  dependencies:
-    node-fetch: ^2.6.11
-  checksum: 39cdd0e16603e43b66fe187bb2a14fb7b4a0b35322ff61d7b08bf48b29a2a7fe835423b27eece46348ab92c45719054e49c4de52de89f279e0935f36a301a5a5
-=======
   version: 3.1.7
   resolution: "cross-fetch@npm:3.1.7"
   dependencies:
     node-fetch: 2.6.12
   checksum: dfa954055e0bf6057506ec66ff634d8588f0f20301208159aedabe56c0e71fa2880dee84ec88306f4aad2a457824d92a761d1aa17af2c45a09b504e4f67f3fcf
->>>>>>> release/netlify-deploy
   languageName: node
   linkType: hard
 
@@ -14521,24 +14510,15 @@ __metadata:
   linkType: hard
 
 "globby@npm:^13.1.1":
-<<<<<<< HEAD
-  version: 13.2.0
-  resolution: "globby@npm:13.2.0"
-=======
   version: 13.2.1
   resolution: "globby@npm:13.2.1"
->>>>>>> release/netlify-deploy
   dependencies:
     dir-glob: ^3.0.1
     fast-glob: ^3.2.11
     ignore: ^5.2.0
     merge2: ^1.4.1
     slash: ^4.0.0
-<<<<<<< HEAD
-  checksum: d1ea2b09dbb24961d16413cdb45764cb63280a2a7066739df5e5b33292ce4980d9da1d168a6a135c332ea1856f921e28d8ffcc2c6c24b82d4f4208477bfe62b4
-=======
   checksum: 263cd0a2fa8cfa90b9922f3a3f5309b1ac1be0aa5439f3c11e71087c7d6ae797f236c231fa2c02c5fe576a1d2d247810932525f57f77c1ba2994a41b81a41c27
->>>>>>> release/netlify-deploy
   languageName: node
   linkType: hard
 
@@ -18777,8 +18757,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "node-fetch@npm:2.6.12, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.7":
   version: 2.6.12
   resolution: "node-fetch@npm:2.6.12"
@@ -18793,7 +18771,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> release/netlify-deploy
 "node-fetch@npm:2.6.7":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
@@ -18822,23 +18799,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.11, node-fetch@npm:^2.6.7":
-  version: 2.6.12
-  resolution: "node-fetch@npm:2.6.12"
-  dependencies:
-    whatwg-url: ^5.0.0
-  peerDependencies:
-    encoding: ^0.1.0
-  peerDependenciesMeta:
-    encoding:
-      optional: true
-  checksum: 10372e4b5ee07acadc15e6b2bc6fd8940582eea7b9b2a331f4e3665fdcd968498c1656f79f2fa572080ebb37ea80e1474a6478b3b36057ef901b63f4be8fd899
-  languageName: node
-  linkType: hard
-
-=======
->>>>>>> release/netlify-deploy
 "node-forge@npm:^1":
   version: 1.3.1
   resolution: "node-forge@npm:1.3.1"
@@ -25038,10 +24998,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-<<<<<<< HEAD
-=======
     "@fortawesome/fontawesome-free": ^6.4.0
->>>>>>> release/netlify-deploy
     "@redwoodjs/auth": 5.0.0
     "@redwoodjs/auth-dbauth-web": 5.0.0
     "@redwoodjs/forms": 5.0.0
