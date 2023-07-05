@@ -65,3 +65,9 @@ yarn rw prisma generate
 - password reset flow with email containing a link to reset password with resetToken
 - setup github actions ci to run the full build, including setup of the db, and running the tests
 
+### Addition of fontawesome icons
+- added fontawesome icons to the package.json
+I am not sure if this is the best way to do this, but it works for now. It uses the [@fortawesome/fontawesome-free](https://www.npmjs.com/package/@fortawesome/fontawesome-free) npm package
+
+
+```json
