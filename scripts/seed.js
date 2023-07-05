@@ -20,13 +20,13 @@ const USERS = [
     roles: 'moderator',
   },
   {
-    id: 2,
+    id: 3,
     email: 'ben+rwuser@benstrawbridge.com',
     name: 'Jackie Doe',
     hashedPassword:
       'e39bb42f8f0e632c8bb7e7398f610077c6de15ac0fb47cf66d9a26c723345a33',
     salt: '7815c67b186610e8b962ad7354eaf648',
-    roles: 'moderator',
+    roles: 'user',
   },
 ]
 
@@ -56,12 +56,13 @@ export default async () => {
   console.log('Seeding users and posts...')
   console.log('')
   for (const user of USERS) {
-    await db.user.upsert({
+    const result = await db.user.upsert({
       where: { id: user.id },
       create: { ...user },
       update: {},
     })
 
+    console.log(result)
     console.log(`  ${user.roles} user ${user.name} with email ${user.email}`)
   }
 
