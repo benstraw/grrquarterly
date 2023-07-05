@@ -67,7 +67,13 @@ yarn rw prisma generate
 
 ### Addition of fontawesome icons
 - added fontawesome icons to the package.json
-I am not sure if this is the best way to do this, but it works for now. It uses the [@fortawesome/fontawesome-free](https://www.npmjs.com/package/@fortawesome/fontawesome-free) npm package
+I am not sure if this is the best way to do this, but it works for now. It uses the [@fortawesome/fontawesome-free](https://www.npmjs.com/package/@fortawesome/fontawesome-free) npm package.
 
 
-```json
+```js
+// import the package in your top level layout file
+import '@fortawesome/fontawesome-free/js/all.js'
+
+// use the icons in your components
+<i className="fa fa-user"></i>
+```
